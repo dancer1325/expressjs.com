@@ -1,80 +1,51 @@
 # expressjs.com
 
-This is the repository of the website [expressjs.com](https://expressjs.com). It is hosted directly from the repository as a [GitHub Pages](https://pages.github.com/) website.
+* goal
+  * repository of the website [expressjs.com](https://expressjs.com) -- hosted on -- github-pages
 
-## Local Setup
+## How to run this website locally?
 
-To preview the website locally:
+### -- via -- Ruby `gem`
+1. install [Ruby and Bundler](https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/)
+2. `gem install jekyll-redirect-from`
+   * install [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from) -- from -- gem
+3. `bundle install`
+   * Bundler will look in the Gemfile for which gems to install. 
+   * The `github-pages` gem includes the same version of Jekyll and other dependencies as used by GitHub Pages, so that your local setup mirrors GitHub Pages as closely as possible.
+4. `bundle exec jekyll serve`
+5. | your browser, open "http://localhost:4000"
 
-1. Install [Ruby and Bundler](https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/) if you don't have them already.
+### -- via -- Docker
 
-1. Install the [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from) gem:
-
-   ```sh
-   $ gem install jekyll-redirect-from
-   ```
-   
-1. Clone this repository by running the following command:
-   ```sh
-   $ git clone https://github.com/expressjs/expressjs.com.git
-   ```
-
-1. Navigate to the cloned repository directory and run the following command:
-
-   ```sh
-   $ bundle install
-   ```
-
-   Bundler will look in the Gemfile for which gems to install. The `github-pages` gem includes the same version of Jekyll and other dependencies as used by GitHub Pages, so that your local setup mirrors GitHub Pages as closely as possible.
-
-1. Run Jekyll using the following command:
-
-   ```sh
-   $ bundle exec jekyll serve
-   ```
-
-   Then, load <http://localhost:4000> in your browser.
-
-## Local Setup using Docker
-
->[!TIP]
-> You can run `make help` to obtain detailed information on how to use our make commands.
-
-0. Ensure that you have Docker and Make installed.
-1. Run `make build` to build the project.
-2. Run `make serve` to serve the project, this include live reloading so any change will be reflected (it can take a while, check the logs).
-3. Run `make clean` to remove the docker images and resources generated.
+1. install Docker & Make
+2. `make build`
+3. `make serve`
+   * serve the project / include live reloading
+4. `make clean`
+   * remove the generated docker images & resources
 
 ## Formatting
 
-Jekyll uses a variant of Markdown known as [Kramdown](https://kramdown.gettalong.org/quickref.html).
+* [Kramdown](https://kramdown.gettalong.org/quickref.html)
+  * == variant of Markdown
+  * -- used by -- Jekyll  
+  * you can use [GFM](https://kramdown.gettalong.org/parser/gfm.html)
+    * _Example:_ 
+      ```.js
+      var express = require('express')
+      var app = express()
+      app.listen(3000)
+      ```
+      -- transformed to --
+      ```
+      const express = require('express')
+      const app = express()
+      app.listen(3000)
+      ```
+* [Liquid template engine](https://shopify.github.io/liquid/)
+  * -- used by -- Jekyll
 
-Jekyll uses the [Liquid template engine](https://shopify.github.io/liquid/) for templating.
+## Why to use Jekyll?
 
-You can use [GFM](https://kramdown.gettalong.org/parser/gfm.html) fenced code blocks for JavaScript; for example:
-
-<pre>
-```js
-var express = require('express')
-var app = express()
-app.listen(3000)
-```
-</pre>
-
-The result looks like this:
-
-```js
-const express = require('express')
-const app = express()
-app.listen(3000)
-```
-
-The default GitHub Pages syntax highlighting has been disabled in `_config.yml` to allow highlighting with [prism.js](https://prismjs.com/).
-
-## Contributing
-
-Please see the [Contributors' Guide](CONTRIBUTING.md) for more information on contributing to the Express JS documentation, including information on contributing translations.
-
-## Why use Jekyll instead of an Express-based solution?
-
-Jekyll comes built-in with GitHub Pages. Since we are already using GitHub Pages to host the website, it makes sense to leverage the capabilities it provides. It's all about using the right tool, for the right job, under the right circumstances.
+* ALTERNATIVE to Express-based solution
+* 👀Jekyll -- comes built-in with -- GitHub Pages 👀
