@@ -5,7 +5,7 @@
     * `/`, returns "Hello World!"
     * OTHER, respond "404 Not Found"
 
-# How has it been creeated?
+# How has it been created?
 * `npm init -y`
 * `npm install express`
 * create "app.js"
