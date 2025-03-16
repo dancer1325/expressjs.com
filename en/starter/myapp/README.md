@@ -22,3 +22,7 @@
     $env:DEBUG='myapp:*'; npm start
     ```
 * open browser | http://localhost:3000/
+
+# Notes
+* see [debug-js](https://github.com/debug-js/debug)
+  * included | [package.json](package.json)
