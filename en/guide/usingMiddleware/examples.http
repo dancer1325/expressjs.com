@@ -1,0 +1,5 @@
+### 5.2  next('route')
+### 5.2.1  NOT skip  -> returns the next, in this case substack
+GET http://localhost:3000/user/1
+### 5.2.2  skip -> returns the NEXT route
+GET http://localhost:3000/user/0
