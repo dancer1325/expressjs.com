@@ -1,25 +1,29 @@
 <h2 id="app">Application</h2>
 
-* == 👀object / -- represents the -- Express application 👀
-  * 💡return value of `express()` 💡 
-  * 's methods
-    * route HTTP requests
-      * [app.METHOD](#app.METHOD)
-      * [app.param](#app.param)
-    * configure middleware
-      * [app.route](#app.route)
-    * render HTML views
-      * [app.render](#app.render)
-    * register a template engine
-      * [app.engine](#app.engine)
-  * 's properties
-    * == application's behaviour
-      * see [Application settings](app-settings.md)
-  * -- can be referred from --
-    * [`req.app`](req-app.md)
-      * == request object
-    * [`res.app`](res-app.md)
-      * == response object 
+* == 👀object / 
+  * -- represents the -- Express application 👀
+    * 💡return value of `express()` 💡 
+    * 's methods
+      * route HTTP requests
+        * [app.METHOD](#app.METHOD)
+        * [app.param](#app.param)
+      * configure middleware
+        * [app.route](#app.route)
+      * render HTML views
+        * [app.render](#app.render)
+      * register a template engine
+        * [app.engine](#app.engine)
+    * 's properties
+      * == application's behaviour
+        * see [Application settings](app-settings.md)
+    * -- can be referred from --
+      * [`req.app`](req-app.md)
+        * == request object
+      * [`res.app`](res-app.md)
+        * == response object 
+  * 's design of use
+    * Node's HTTP servers' callback / handle requests
+      * -> SAME code base | HTTP & HTTPS
 * "app"
   * 👀== conventional name == you can rename 👀
 
