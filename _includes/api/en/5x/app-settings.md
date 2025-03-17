@@ -1,12 +1,13 @@
-The following table lists application settings.
+* goal
+  * application settings
 
-Note that sub-apps will:
-
-* Not inherit the value of settings that have a default value. You must set the value in the sub-app.
-* Inherit the value of settings with no default value; these are explicitly noted in the table below.
-
-Exceptions: Sub-apps will inherit the value of `trust proxy` even though it has a default value (for backward-compatibility);
-Sub-apps will not inherit the value of `view cache` in production (when `NODE_ENV` is "production").
+* sub-apps 
+  * settings / 
+    * NO use default value -> inherit the value
+      * 👀EXCEPT to `view cache` / `NODE_ENV` == "production"  👀
+    * use default value -> ❌NO inherit the value ❌
+      * 👀EXCEPT to `trust proxy` 👀
+        * Reason: 🧠backward-compatibility 🧠
 
 <div class="table-scroller">
   <table class="doctable" border="1">
