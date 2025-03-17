@@ -53,6 +53,12 @@ app.use('/errorhandlingmiddleware', (err, req, res, next) => {
     res.status(500).send('Something broke!')
     console.error(err.stack)
 })
+// 4.5  INDEPENDENT of HTTP request's method
+app.use('/user/:id', (req, res, next) => {
+    console.log('Request Type:', req.method)
+    res.status(200).send('Received')
+    next()
+})
 
 
 // 5.   app.listen(path [, callback])

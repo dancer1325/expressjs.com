@@ -13,6 +13,7 @@
   * ⚠️middleware functions are executed sequentially ⚠️
     * == inclusion order is important
     * ⚠️if a middleware function does NOT allow going beyond the request -> NO reach other middleware functions ⚠️
+  * ⚠️INDEPENDENT of HTTP request's method ⚠️
 
 * [routing-args](/_includes/api/en/5x/routing-args.md)
 
