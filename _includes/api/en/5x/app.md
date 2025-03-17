@@ -1,7 +1,27 @@
 <h2 id="app">Application</h2>
 
-The `app` object conventionally denotes the Express application.
-Create it by calling the top-level `express()` function exported by the Express module:
+* == 👀object / -- represents the -- Express application 👀
+  * 💡return value of `express()` 💡 
+  * 's methods
+    * route HTTP requests
+      * [app.METHOD](#app.METHOD)
+      * [app.param](#app.param)
+    * configure middleware
+      * [app.route](#app.route)
+    * render HTML views
+      * [app.render](#app.render)
+    * register a template engine
+      * [app.engine](#app.engine)
+  * 's properties
+    * == application's behaviour
+      * see [Application settings](app-settings.md)
+  * -- can be referred from --
+    * [`req.app`](req-app.md)
+      * == request object
+    * [`res.app`](res-app.md)
+      * == response object 
+* "app"
+  * 👀== conventional name == you can rename 👀
 
 ```js
 const express = require('express')
@@ -13,20 +33,6 @@ app.get('/', (req, res) => {
 
 app.listen(3000)
 ```
-
-The `app` object has methods for
-
-* Routing HTTP requests; see for example, [app.METHOD](#app.METHOD) and [app.param](#app.param).
-* Configuring middleware; see [app.route](#app.route).
-* Rendering HTML views; see [app.render](#app.render).
-* Registering a template engine; see [app.engine](#app.engine).
-
-It also has settings (properties) that affect how the application behaves;
-for more information, see [Application settings](#app.settings.table).
-
-<div class="doc-box doc-info" markdown="1">
-The Express application object can be referred from the [request object](#req) and the [response object](#res) as `req.app`, and `res.app`, respectively.
-</div>
 
 <h3 id='app.properties'>Properties</h3>
 
