@@ -18,4 +18,5 @@
       * Problem:
         * Problem1: root NOT found
           * Solution: TODO:
-    * 
+    * http://localhost:3000/substack/3
+      * check the log

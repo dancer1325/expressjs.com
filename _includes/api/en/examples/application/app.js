@@ -59,7 +59,14 @@ app.use('/user/:id', (req, res, next) => {
     res.status(200).send('Received')
     next()
 })
-
+// 4.6  middleware sub-stack
+app.use('/substack/:id', (req, res, next) => {
+    console.log('[/substack/:id] Request URL:', req.originalUrl)i9
+    next()
+}, (req, res, next) => {
+    console.log('[/substack/:id] Request Type:', req.method)
+    next()
+})
 
 // 5.   app.listen(path [, callback])
 fs.unlinkSync(SOCKET_PATH);
