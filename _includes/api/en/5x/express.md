@@ -1,6 +1,7 @@
 <h2 id="express">express()</h2>
 
-Creates an Express application. The `express()` function is a top-level function exported by the `express` module.
+* Creates an Express application
+* == top-level function -- [exported by the -- `express` module](https://github.com/dancer1325/express/blob/master/lib/express.js#L27)
 
 ```js
 const express = require('express')
