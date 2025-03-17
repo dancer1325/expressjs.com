@@ -23,17 +23,6 @@
 * "app"
   * 👀== conventional name == you can rename 👀
 
-```js
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
-
-app.listen(3000)
-```
-
 <h3 id='app.properties'>Properties</h3>
 
 <section markdown="1">
