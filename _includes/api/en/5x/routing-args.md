@@ -10,15 +10,16 @@
 <tr>
 <td><code>path</code></td>
 <td>
-The path for which the middleware function is invoked; can be any of:
+== path | middleware function -- is -- invoked </br>
+ALLOWED values
 <ul>
-<li>A string representing a path.</li>
-<li>A path pattern.</li>
-<li>A regular expression pattern to match paths.</li>
-<li>An array of combinations of any of the above.</li>
+<li>string / -- represent a -- path</li>
+<li>path pattern</li>
+<li>regular expression pattern / match paths</li>
+<li> `[ofPreviousAllowedValues]` </li>
 </ul>
 
-For examples, see <a href="#path-examples">Path examples</a>.
+_Example:_ [Path examples](app-use.md#path-examples)
 </td>
 <td>'/' (root path)</td>
 </tr>
@@ -26,14 +27,22 @@ For examples, see <a href="#path-examples">Path examples</a>.
 <tr>
 <td> <code>callback</code></td>
 <td>
-Callback functions; can be:
+== Callback functions / ALLOWED values
 <ul>
-<li>A middleware function.</li>
-<li>A series of middleware functions (separated by commas).</li>
-<li>An array of middleware functions.</li>
-<li>A combination of all of the above.</li>
+<li>middleware function</li>
+<ul>
+<li>👀ALLOWED ALSO to use [router](router.md) & [app](application.md)👀
+<ul>
+<li>Reason: 🧠implement the middleware interface 🧠</li>
+</ul>
+</li>
+</ul>
+<li>middleware functionS / -- separated by -- `,`</li>
+<li>`[middlewareFunctions]`</li>
+<li>COMBINATION of PREVIOUS</li>
 </ul>
 <p>
+* TODO:
 You can provide multiple callback functions that behave just like middleware, except
 that these callbacks can invoke <code>next('route')</code> to bypass
 the remaining route callback(s). You can use this mechanism to impose pre-conditions
@@ -41,11 +50,10 @@ on a route, then pass control to subsequent routes if there is no reason to proc
 </p><p>
 When a callback function throws an error or returns a rejected promise, `next(err)` will be invoked automatically.
 </p><p>
-Since <a href="#router">router</a> and <a href="#application">app</a> implement the middleware interface,
-you can use them as you would any other middleware function.
-</p><p>
-For examples, see <a href="#middleware-callback-function-examples">Middleware callback function examples</a>.
-</p>
+
+
+_Examples:_ [Middleware callback function examples](app-use.md#middleware-callback-function-examples)
+
 </td>
 <td> None </td>
 </tr></table>
