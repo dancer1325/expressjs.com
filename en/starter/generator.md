@@ -27,3 +27,5 @@ redirect_from: "/starter/generator.html"
     * display command options
 
 * _Example:_ [here](myapp)
+
+* see [here](https://github.com/expressjs/generator)
