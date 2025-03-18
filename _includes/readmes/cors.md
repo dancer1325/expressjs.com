@@ -5,9 +5,8 @@
 [![Build Status][github-actions-ci-image]][github-actions-ci-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-CORS is a node.js package for providing a [Connect](http://www.senchalabs.org/connect/)/[Express](http://expressjs.com/) middleware that can be used to enable [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) with various options.
-
-**[Follow me (@troygoode) on Twitter!](https://twitter.com/intent/user?screen_name=troygoode)**
+* CORS
+  * == node.js package / provide a [Connect](http://www.senchalabs.org/connect/)/[Express](http://expressjs.com/) middleware -- to enable -- [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -20,13 +19,8 @@ CORS is a node.js package for providing a [Connect](http://www.senchalabs.org/co
 * [Configuration Options](#configuration-options)
 * [Demo](#demo)
 * [License](#license)
-* [Author](#author)
 
 ## Installation
-
-This is a [Node.js](https://nodejs.org/en/) module available through the
-[npm registry](https://www.npmjs.com/). Installation is done using the
-[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
 $ npm install cors
@@ -34,63 +28,20 @@ $ npm install cors
 
 ## Usage
 
-### Simple Usage (Enable *All* CORS Requests)
+### Enable ALL CORS Requests
 
-```javascript
-var express = require('express')
-var cors = require('cors')
-var app = express()
+* [here](examples/cors/all.js)
 
-app.use(cors())
+### Enable CORS / 1! Route
 
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
-
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
-})
-```
-
-### Enable CORS for a Single Route
-
-```javascript
-var express = require('express')
-var cors = require('cors')
-var app = express()
-
-app.get('/products/:id', cors(), function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for a Single Route'})
-})
-
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
-})
-```
+* [here](examples/cors/corsPer1Route.js)
 
 ### Configuring CORS
 
-```javascript
-var express = require('express')
-var cors = require('cors')
-var app = express()
-
-var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
-app.get('/products/:id', cors(corsOptions), function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for only example.com.'})
-})
-
-app.listen(80, function () {
-  console.log('CORS-enabled web server listening on port 80')
-})
-```
+* [here](examples/cors/corsWithOptions.js)
 
 ### Configuring CORS w/ Dynamic Origin
-
+* TODO:
 This module supports validating the origin dynamically using a function provided
 to the `origin` option. This function will be passed a string that is the origin
 (or `undefined` if the request has no origin), and a `callback` with the signature
@@ -218,22 +169,14 @@ The default configuration is the equivalent of:
 
 For details on the effect of each CORS header, read [this](https://web.dev/cross-origin-resource-sharing/) article on web.dev.
 
-## Demo
+## _Examples:_
 
-A demo that illustrates CORS working (and not working) using React is available here: [https://node-cors-client.netlify.com](https://node-cors-client.netlify.com)
-
-Code for that demo can be found here:
-
-* Client: [https://github.com/troygoode/node-cors-client](https://github.com/troygoode/node-cors-client)
-* Server: [https://github.com/troygoode/node-cors-server](https://github.com/troygoode/node-cors-server)
+* [Client](https://github.com/dancer1325/node-cors-client)
+* [Server](https://github.com/dancer1325/node-cors-server)
 
 ## License
 
-[MIT License](http://www.opensource.org/licenses/mit-license.php)
-
-## Author
-
-[Troy Goode](https://github.com/TroyGoode) ([troygoode@gmail.com](mailto:troygoode@gmail.com))
+* [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 [coveralls-image]: https://img.shields.io/coveralls/expressjs/cors/master.svg
 [coveralls-url]: https://coveralls.io/r/expressjs/cors?branch=master

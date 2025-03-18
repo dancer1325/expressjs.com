@@ -1,0 +1,18 @@
+## 1. ALL CORS TODO: Why are all getting 404?
+### 1.1
+OPTIONS http://localhost:80/products/2
+#Origin: http://example.com
+#Access-Control-Request-Method: GET
+
+### 1.2
+GET http://localhost:80/products/2
+
+## 3. corsWithOptions TODO: Why are ALL getting 404?
+### 3.1 ALLOWED origin
+GET http://localhost:80/products/1
+Origin: http://example.com
+//Accept: application/json
+
+### 3.1 NOT ALLOWED origin
+GET http://localhost:80/products/1
+Origin: http://different-example.com
